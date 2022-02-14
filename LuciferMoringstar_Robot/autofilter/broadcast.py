@@ -42,7 +42,7 @@ async def send_msg(user_id, message):
         return 500, f"{user_id} : {traceback.format_exc()}\n"
 
 
-@LuciferMoringstar_Robot.on_message(Worker.private & Worker.command(["broadcast", "send"]) & Worker.user(ADMINS) & Worker.reply)
+@AlenAlenBot.on_message(Worker.private & Worker.command(["broadcast", "send"]) & Worker.user(ADMINS) & Worker.reply)
 async def broadcast_(c, m):
     print("broadcasting......")
     all_users = await db.get_all_users()
