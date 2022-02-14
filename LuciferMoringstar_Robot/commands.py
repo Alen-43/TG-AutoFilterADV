@@ -8,7 +8,7 @@ from LuciferMoringstar_Robot.database.broadcast_db import Database
 db = Database()
 
 
-@LuciferMoringstar_Robot.on_message(Worker.private & Worker.command(["start"]))
+@AlenAlenBot.on_message(Worker.private & Worker.command(["start"]))
 async def start_message(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
@@ -21,7 +21,7 @@ async def start_message(bot, message):
              InlineKeyboardButton("😎 About", callback_data="about") 
              ],[
              InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/OTqZmADyOjU"),
-             InlineKeyboardButton("🤖 Support", url="https://t.me/Mo_Tech_YT")
+             InlineKeyboardButton("🤖 Support", url="https://t.me/space_4_movies")
              ]]
         else:
             buttons = [[
@@ -31,7 +31,7 @@ async def start_message(bot, message):
              InlineKeyboardButton("😎 About", callback_data="about") 
              ],[
              InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/OTqZmADyOjU"),
-             InlineKeyboardButton("🤖 Support", url="https://t.me/Mo_Tech_Group")
+             InlineKeyboardButton("🤖 Support", url="https://t.me/space_4_movies")
              ]]    
         await message.reply_photo(photo = choice(BOT_PICS), caption=START_MSG.format(mention = message.from_user.mention, bot_name = bot_info.BOT_NAME, bot_username = bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons))
         
@@ -60,7 +60,7 @@ async def help(bot, message):
         caption=LuciferMoringstar.HELP_MSG.format(mention=message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(button))
       
-@LuciferMoringstar_Robot.on_message(Worker.private & Worker.command(["about"]))
+@AlenAlenBot.on_message(Worker.private & Worker.command(["about"]))
 async def about(bot, message):
     button = [[
      InlineKeyboardButton("🏠 Home", callback_data="start"),
@@ -68,6 +68,6 @@ async def about(bot, message):
      ]]  
     await message.reply_photo(
         photo = choice(BOT_PICS),
-        caption=LuciferMoringstar.ABOUT_MSG.format(mention=message.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME),
+        caption=AlenAlenBot.ABOUT_MSG.format(mention=message.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME),
         reply_markup=InlineKeyboardMarkup(button))
         
