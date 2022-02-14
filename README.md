@@ -31,10 +31,9 @@
 - [x] Status
 - [x] Custom Caption
 
-### 🧑‍💻 𝗗𝗲𝗽𝗹𝗼𝘆 𝗧𝗼 𝗛𝗲𝗿𝗼𝗸𝘂 👨‍💻
-<a href="https://heroku.com/deploy?template=https://github.com/singam4alen/TG-AutoFilterADV-Robot",
+### You can also tap the Deploy To Heroku button below to deploy straight to Heroku!
 
-
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/singam4alen/TG-AutoFilterADV)
 ### 📍 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗱
 
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
